@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.utils import timezone
+from .models import Post
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the blog index.")
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/index.html', {'posts': posts})
