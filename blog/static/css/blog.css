@@ -31,11 +31,20 @@ time {
     font-size: smaller;
 }
 
+.btn-blog {
+    background-color: var(--orange-1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    color: white;
+}
+
 /*--------------------------
 # HEADER
 ----------------------------*/
 
 header {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--orange-3);
     padding: 3rem 2rem;
     color: white;
@@ -43,6 +52,18 @@ header {
 
 header h1 {
     font-family: 'Lobster';
+}
+
+header a {
+    background-color: var(--orange-1);
+    border-radius: 50%;
+    padding: 1rem;
+    color: white;
+}
+
+header a:hover {
+    background-color: white;
+    color: var(--orange-1);
 }
 
 /*--------------------------
@@ -68,6 +89,17 @@ article h2 a,
     font-family: 'Lobster';
 }
 
+.div_post_form h2 {
+    color: var(--orange-1);
+    font-family: 'Lobster';
+}
+
+form p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /*--------------------------
 # FOOTER
 ----------------------------*/
@@ -76,4 +108,20 @@ footer {
     background-color: var(--orange-3);
     padding: 3rem 2rem;
     color: white;
+}
+
+footer span {
+    font-style: italic;
+}
+
+footer .nav a {
+    background-color: var(--orange-1);
+    border-radius: 50%;
+    padding: 1rem;
+    color: white;
+}
+
+footer .nav a:hover {
+    background-color: white;
+    color: var(--orange-1);
 }
