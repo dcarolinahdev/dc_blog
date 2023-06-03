@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="d-flex flex-column gap-5">
+    <article>
+        {% if post.published_date %}
+            <time>published: {{ post.published_date }}</time>
+        {% endif %}
+        <h2 class="blog_title">{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+  </div>
+{% endblock %}
