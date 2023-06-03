@@ -1,2 +1,3 @@
-# dc_blog
+# dcarolinahdev's blog
+
 A personal blog with Django

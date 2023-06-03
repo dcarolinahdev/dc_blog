@@ -1,0 +1,73 @@
+/*--------------------------
+# General
+----------------------------*/
+:root {
+    --orange-1: #FF9E03;
+    --orange-2: #FFAA0B;
+    --orange-3: #FFB713;
+    --orange-4: #FFC31B;
+    --orange-5: #FFD023;
+    --orange-6: #FFDC2B;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*--------------------------
+# HEADER
+----------------------------*/
+
+header {
+    background-color: var(--orange-3);
+    padding: 3rem 2rem;
+    color: white;
+}
+
+header h1 {
+    font-family: 'Lobster';
+}
+
+/*--------------------------
+# MAIN
+----------------------------*/
+
+main {
+    padding: 1.5rem 2rem;
+}
+
+article {
+    padding: 1rem;
+
+    -webkit-box-shadow: 0px 0px 10px 5px var(--orange-4);
+    -moz-box-shadow: 0px 0px 10px 5px var(--orange-4);
+    box-shadow: 0px 0px 10px 5px var(--orange-4);
+}
+
+article h2 a {
+    color: var(--orange-1);
+    text-decoration: none;
+    font-family: 'Lobster';
+}
+
+/*--------------------------
+# FOOTER
+----------------------------*/
+
+footer {
+    background-color: var(--orange-3);
+    padding: 3rem 2rem;
+    color: white;
+}
