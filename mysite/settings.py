@@ -41,7 +41,9 @@ DJANGO_APPS = [
 
 THIRD_APPS = []
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'blog.apps.BlogConfig',
+]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
 
