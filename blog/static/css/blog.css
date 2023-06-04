@@ -26,7 +26,8 @@ body {
     min-height: 100vh;
 }
 
-time {
+time,
+.date {
     font-style: italic;
     font-size: smaller;
 }
@@ -45,9 +46,14 @@ time {
     color: white;
 }
 
-.btn-blog-circle:hover {
+.btn-blog-circle:hover,
+.btn-blog-circle:active {
     background-color: white;
     color: var(--orange-1);
+}
+
+.text-blog {
+    color: var(--orange-2);
 }
 
 /*--------------------------
@@ -57,13 +63,26 @@ time {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--orange-3);
-    padding: 3rem 2rem;
+    padding: 2rem;
     color: white;
 }
 
 header h1 {
     font-family: 'Lobster';
+}
+
+header i {
+    font-size: 2rem;
+}
+
+header .draft {
+    padding: 0.5rem 1.5rem;
+}
+
+header .plus {
+    padding: 0.5rem 1.7rem;
 }
 
 /*--------------------------
@@ -89,7 +108,8 @@ article h2 a,
     font-family: 'Lobster';
 }
 
-.div_post_form h2 {
+.div_post_form h2,
+.div_comment_form h2 {
     color: var(--orange-1);
     font-family: 'Lobster';
 }
@@ -98,6 +118,38 @@ form p {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+a.big,
+span.big {
+    padding: 0.3rem 0.7rem;
+    font-size: 1.6rem;
+}
+
+span.inactive {
+    cursor: not-allowed;
+}
+
+span.inactive > span {
+    background-color: transparent;
+    border-color: var(--orange-2);
+    color: var(--orange-2);
+    pointer-events: none;
+}
+
+.comment {
+    width: 50%;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.comment .date {
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+.comment p {
+    margin-bottom: 0;
 }
 
 /*--------------------------
@@ -112,4 +164,5 @@ footer {
 
 footer span {
     font-style: italic;
+    font-size: 1.4rem;
 }
