@@ -14,5 +14,6 @@ To-Do:
 - managemenet users
 - management media files
 - migrate to class based views
+- likes posts
 - custom registrations of models in administrator site
 - testing

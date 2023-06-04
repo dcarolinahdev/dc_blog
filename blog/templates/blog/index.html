@@ -8,6 +8,7 @@
         <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
         <p>{{ post.comments.count }} comment(s)</p>
+        <!--<p><i class="bi bi-hand-thumbs-up"></i></p>-->
       </article>
     {% endfor %}
   </div>
