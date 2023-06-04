@@ -38,6 +38,18 @@ time {
     color: white;
 }
 
+.btn-blog-circle {
+    background-color: var(--orange-1);
+    border-radius: 50%;
+    padding: 0.75rem 1rem;
+    color: white;
+}
+
+.btn-blog-circle:hover {
+    background-color: white;
+    color: var(--orange-1);
+}
+
 /*--------------------------
 # HEADER
 ----------------------------*/
@@ -52,18 +64,6 @@ header {
 
 header h1 {
     font-family: 'Lobster';
-}
-
-header a {
-    background-color: var(--orange-1);
-    border-radius: 50%;
-    padding: 1rem;
-    color: white;
-}
-
-header a:hover {
-    background-color: white;
-    color: var(--orange-1);
 }
 
 /*--------------------------
@@ -112,16 +112,4 @@ footer {
 
 footer span {
     font-style: italic;
-}
-
-footer .nav a {
-    background-color: var(--orange-1);
-    border-radius: 50%;
-    padding: 1rem;
-    color: white;
-}
-
-footer .nav a:hover {
-    background-color: white;
-    color: var(--orange-1);
 }

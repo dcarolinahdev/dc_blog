@@ -3,11 +3,20 @@
 {% block content %}
   <div class="d-flex flex-column gap-5">
     <article>
+      <div class="post_header d-flex justify-content-between align-items-center">
         {% if post.published_date %}
-            <time>published: {{ post.published_date }}</time>
+          <time>published: {{ post.published_date }}</time>
         {% endif %}
+        <div class="actions">
+          <a class="btn btn-blog-circle" href="{% url 'post_edit' pk=post.pk %}">
+            <i class="bi bi-pencil"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post_main">
         <h2 class="blog_title">{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
+      </div>
     </article>
   </div>
 {% endblock %}
