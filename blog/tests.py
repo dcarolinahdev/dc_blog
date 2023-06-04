@@ -103,3 +103,25 @@ class PostIndexViewTests(TestCase):
             response.context["posts"],
             [post2, post1],
         )
+
+# Test for Detail View
+class PostDetailViewTests(TestCase):
+    def test_future_post(self):
+        """
+        The detail view of a post with a pub_date in the future
+        returns a 404 not found.
+        """
+        future_post = create_post(post_text="Future post.", days=5)
+        url = reverse("blog:post_detail", args=(future_post.id,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
+
+    def test_past_post(self):
+        """
+        The detail view of a post with a pub_date in the past
+        displays the post's text.
+        """
+        past_post = create_post(post_text="Past post.", days=-5)
+        url = reverse("blog:post_detail", args=(past_post.id,))
+        response = self.client.get(url)
+        self.assertContains(response, past_post.text)

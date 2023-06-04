@@ -24,9 +24,15 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'action': 'New', 'form': form})
 
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk) # to-do: template for 404
-    return render(request, 'blog/post_detail.html', {'post': post})
+class DetailView(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+
+    def get_queryset(self):
+        """
+        Excludes any posts that aren't published yet.
+        """
+        return Post.objects.filter(published_date__lte=timezone.now())
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
