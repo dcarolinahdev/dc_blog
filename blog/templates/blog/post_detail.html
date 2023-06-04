@@ -7,11 +7,13 @@
         {% if post.published_date %}
           <time>published: {{ post.published_date }}</time>
         {% endif %}
+        {% if user.is_authenticated %}
         <div class="actions">
           <a class="btn btn-blog-circle" href="{% url 'post_edit' pk=post.pk %}">
             <i class="bi bi-pencil"></i>
           </a>
         </div>
+        {% endif %}
       </div>
       <div class="post_main">
         <h2 class="blog_title">{{ post.title }}</h2>
