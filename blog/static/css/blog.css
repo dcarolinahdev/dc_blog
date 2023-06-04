@@ -62,13 +62,26 @@ time,
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--orange-3);
-    padding: 3rem 2rem;
+    padding: 2rem;
     color: white;
 }
 
 header h1 {
     font-family: 'Lobster';
+}
+
+header i {
+    font-size: 2rem;
+}
+
+header .draft {
+    padding: 0.5rem 1.5rem;
+}
+
+header .plus {
+    padding: 0.5rem 1.7rem;
 }
 
 /*--------------------------
@@ -106,6 +119,11 @@ form p {
     gap: 1rem;
 }
 
+a.big {
+    padding: 0.3rem 0.7rem;
+    font-size: 1.6rem;
+}
+
 .comment {
     width: 50%;
     padding: 0 2rem;
@@ -133,4 +151,5 @@ footer {
 
 footer span {
     font-style: italic;
+    font-size: 1.4rem;
 }

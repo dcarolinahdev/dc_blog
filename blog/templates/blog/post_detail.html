@@ -10,7 +10,7 @@
         {% if user.is_authenticated %}
         <div class="actions">
           <a class="btn btn-blog-circle" href="{% url 'post_edit' pk=post.pk %}">
-            <i class="bi bi-pencil"></i>
+            <i class="bi bi-pencil-fill"></i>
           </a>
           {% if not post.published_date %}
           <a class="btn btn-blog-circle" href="{% url 'post_publish' pk=post.pk %}">
@@ -20,8 +20,8 @@
           <a class="btn btn-blog-circle" href="{% url 'post_delete' pk=post.pk %}">
             <i class="bi bi-trash3-fill"></i>
           </a>
-          <a class="btn btn-blog-circle" href="{% url 'add_comment_to_post' pk=post.pk %}">
-            <i class="bi bi-pencil-square"></i>
+          <a class="btn btn-blog-circle big" href="{% url 'add_comment_to_post' pk=post.pk %}">
+            <i class="bi bi-plus-circle-dotted"></i>
           </a>
         </div>
         {% endif %}
@@ -38,11 +38,11 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="date">{{ comment.created_date }}</div>
                 <div>
-                  <a class="btn btn-blog-circle" href="{% url 'comment_approve' pk=comment.pk %}">
+                  <a class="btn btn-blog-circle big" href="{% url 'comment_approve' pk=comment.pk %}">
                     <i class="bi bi-check2-all"></i>
                   </a>
                   <a class="btn btn-blog-circle" href="{% url 'comment_remove' pk=comment.pk %}">
-                    <i class="bi bi-x-circle"></i>
+                    <i class="bi bi-trash3-fill"></i>
                   </a>
                 </div>
               </div>
