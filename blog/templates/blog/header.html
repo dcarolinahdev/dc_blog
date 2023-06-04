@@ -2,10 +2,12 @@
     <h1>dcarolinahdev's blog</h1>
 
     <ul class="nav d-flex align-items-center gap-2">
+        {% if user.is_authenticated %}
         <li class="nav-item">
             <a href="{% url 'post_new' %}" class="btn btn-blog-circle">
                 <i class="bi bi-file-plus"></i>
             </a>
         </li>
+        {% endif %}
     </ul>
 </header>
