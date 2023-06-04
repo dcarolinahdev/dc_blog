@@ -4,7 +4,7 @@ from .models import Post
 from .forms import PostForm
 
 def index(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now(), active=True).order_by('published_date')
     return render(request, 'blog/index.html', {'posts': posts})
 
 def post_new(request):
@@ -45,3 +45,9 @@ def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_detail', pk=pk)
+
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.active = False
+    post.save()
+    return redirect('index')
