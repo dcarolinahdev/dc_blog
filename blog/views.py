@@ -10,7 +10,7 @@ class IndexView(generic.ListView):
     context_object_name = 'posts'
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now(), active=True).order_by('published_date')
+        return Post.objects.filter(published_date__lte=timezone.now(), active=True).order_by('-published_date')
 
 def post_new(request):
     if request.method == "POST":

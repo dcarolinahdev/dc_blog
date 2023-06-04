@@ -10,6 +10,8 @@
         <p>{{ post.comments.count }} comment(s)</p>
         <!--<p><i class="bi bi-hand-thumbs-up"></i></p>-->
       </article>
+    {% empty %}
+      <div class="empty-posts">No posts are available.</div>
     {% endfor %}
   </div>
 {% endblock %}
