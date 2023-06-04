@@ -5,6 +5,7 @@
         <div>
             <h2>{{action}} post</h2>
             <form method="POST" class="post-form">{% csrf_token %}
+                <!--{% if error_message %}<div class="errors_form">{{ error_message }}</div>{% endif %}-->
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-blog">Save</button>
             </form>
