@@ -4,12 +4,12 @@
     <ul class="nav d-flex align-items-center gap-2">
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <a href="{% url 'post_new' %}" class="btn btn-blog-circle plus d-flex flex-column">
+            <a href="{% url 'blog:post_new' %}" class="btn btn-blog-circle plus d-flex flex-column">
                 <i class="bi bi-plus"></i><span>post</span>
             </a>
         </li>
         <li>
-            <a href="{% url 'post_draft_list' %}" class="btn btn-blog-circle draft d-flex flex-column">
+            <a href="{% url 'blog:post_draft_list' %}" class="btn btn-blog-circle draft d-flex flex-column">
                 <i class="bi bi-list-ul"></i><span>drafts</span>
             </a>
         </li>
