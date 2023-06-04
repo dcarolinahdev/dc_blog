@@ -69,6 +69,7 @@ sudo su postgres
 psql
 CREATE DATABASE <db_name>;
 CREATE USER <db_user> WITH PASSWORD 'db_user_passw';
+ALTER USER <db_user> WITH CREATEDB;
 GRANT ALL PRIVILEGES ON DATABASE <db_name> TO <db_user>;
 \q
 exit
@@ -83,9 +84,9 @@ mysite/settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pblog_db',
-        'USER': 'admin_pblog',
-        'PASSWORD': 'adminblog1234.',
+        'NAME': <db_name>,
+        'USER': <db_user>,
+        'PASSWORD': <passw_user>,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
