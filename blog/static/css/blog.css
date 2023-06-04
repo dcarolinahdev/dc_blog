@@ -46,7 +46,8 @@ time,
     color: white;
 }
 
-.btn-blog-circle:hover {
+.btn-blog-circle:hover,
+.btn-blog-circle:active {
     background-color: white;
     color: var(--orange-1);
 }
@@ -119,9 +120,21 @@ form p {
     gap: 1rem;
 }
 
-a.big {
+a.big,
+span.big {
     padding: 0.3rem 0.7rem;
     font-size: 1.6rem;
+}
+
+span.inactive {
+    cursor: not-allowed;
+}
+
+span.inactive > span {
+    background-color: transparent;
+    border-color: var(--orange-2);
+    color: var(--orange-2);
+    pointer-events: none;
 }
 
 .comment {
