@@ -1,5 +1,7 @@
 <header>
-    <h1>dcarolinahdev's blog</h1>
+    <a href="{% url 'blog:index' %}">
+        <h1>dcarolinahdev's blog</h1>
+    </a>
 
     <ul class="nav d-flex align-items-center gap-2">
         {% if user.is_authenticated %}
