@@ -20,12 +20,38 @@
           <a class="btn btn-blog-circle" href="{% url 'post_delete' pk=post.pk %}">
             <i class="bi bi-trash3-fill"></i>
           </a>
+          <a class="btn btn-blog-circle" href="{% url 'add_comment_to_post' pk=post.pk %}">
+            <i class="bi bi-pencil-square"></i>
+          </a>
         </div>
         {% endif %}
       </div>
       <div class="post_main">
         <h2 class="blog_title">{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
+        <div class="comments">
+          {% if post.comments.all %}
+          <p class="fw-bold">Comments:</p>
+          {% endif %}
+          {% for comment in post.comments.all %}
+            <div class="comment">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="date">{{ comment.created_date }}</div>
+                <div>
+                  <a class="btn btn-blog-circle" href="{% url 'comment_approve' pk=comment.pk %}">
+                    <i class="bi bi-check2-all"></i>
+                  </a>
+                  <a class="btn btn-blog-circle" href="{% url 'comment_remove' pk=comment.pk %}">
+                    <i class="bi bi-x-circle"></i>
+                  </a>
+                </div>
+              </div>
+              <p>{{ comment.text|linebreaks }}</p>
+            </div>
+          {% empty %}
+          <p class="text-blog mb-0">No comments here yet</p>
+          {% endfor %}
+        </div>
       </div>
     </article>
   </div>

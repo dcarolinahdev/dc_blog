@@ -7,6 +7,7 @@
         <time>published: {{ post.published_date }}</time>
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
+        <p>{{ post.comments.count }} comment(s)</p>
       </article>
     {% endfor %}
   </div>

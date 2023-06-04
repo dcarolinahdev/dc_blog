@@ -26,7 +26,8 @@ body {
     min-height: 100vh;
 }
 
-time {
+time,
+.date {
     font-style: italic;
     font-size: smaller;
 }
@@ -48,6 +49,10 @@ time {
 .btn-blog-circle:hover {
     background-color: white;
     color: var(--orange-1);
+}
+
+.text-blog {
+    color: var(--orange-2);
 }
 
 /*--------------------------
@@ -89,7 +94,8 @@ article h2 a,
     font-family: 'Lobster';
 }
 
-.div_post_form h2 {
+.div_post_form h2,
+.div_comment_form h2 {
     color: var(--orange-1);
     font-family: 'Lobster';
 }
@@ -98,6 +104,21 @@ form p {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.comment {
+    width: 50%;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.comment .date {
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+.comment p {
+    margin-bottom: 0;
 }
 
 /*--------------------------
