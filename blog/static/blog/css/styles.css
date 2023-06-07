@@ -23,6 +23,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     min-height: 100vh;
 }
 
@@ -37,6 +38,12 @@ time,
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
     color: white;
+}
+
+.btn-blog:hover {
+    background-color: white;
+    color: var(--orange-1);
+    border-color: var(--orange-1);
 }
 
 .btn-blog-circle {
@@ -69,6 +76,11 @@ header {
     color: white;
 }
 
+header a {
+    color: white;
+    text-decoration: none;
+}
+
 header h1 {
     font-family: 'Lobster';
 }
@@ -90,10 +102,30 @@ header .plus {
 ----------------------------*/
 
 main {
-    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    margin-top: 10rem;
+    padding: 3rem 0rem;
+
+    background: url("../img/background_main.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
 }
 
 article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+
+    background-color: white;
+    font-size: 1.4rem;
+    opacity: 0.9;
     padding: 1rem;
 
     -webkit-box-shadow: 0px 0px 10px 5px var(--orange-4);
@@ -108,10 +140,31 @@ article h2 a,
     font-family: 'Lobster';
 }
 
+.div_post_form,
+.div_comment_form {
+    background-color: white;
+    opacity: 0.8;
+    padding: 2rem 0;
+}
+
 .div_post_form h2,
 .div_comment_form h2 {
     color: var(--orange-1);
     font-family: 'Lobster';
+}
+
+.div_comment_form p.span {
+    font-weight: bold;
+}
+
+.div_comment_form span {
+    color: var(--orange-1);
+    font-size: 1.4rem;
+}
+
+.div_comment_form button {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 form p {

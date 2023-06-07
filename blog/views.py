@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
+from django.views import generic
+
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
-def index(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now(), active=True).order_by('published_date')
-    return render(request, 'blog/index.html', {'posts': posts})
+class IndexView(generic.ListView):
+    template_name = 'blog/index.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(published_date__lte=timezone.now(), active=True).order_by('-published_date')
 
 def post_new(request):
     if request.method == "POST":
@@ -19,9 +24,15 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'action': 'New', 'form': form})
 
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk) # to-do: template for 404
-    return render(request, 'blog/post_detail.html', {'post': post})
+class DetailView(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+
+    def get_queryset(self):
+        """
+        Excludes any posts that aren't published yet.
+        """
+        return Post.objects.filter(published_date__lte=timezone.now())
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -63,7 +74,7 @@ def add_comment_to_post(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
-    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+    return render(request, 'blog/add_comment_to_post.html', {'form': form, 'post': post})
 
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)

@@ -1,14 +1,17 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-  <div class="d-flex flex-column gap-5">
+  <main>
     {% for post in posts %}
       <article>
         <time>published: {{ post.published_date }}</time>
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
         <p>{{ post.comments.count }} comment(s)</p>
+        <!--<p><i class="bi bi-hand-thumbs-up"></i></p>-->
       </article>
+    {% empty %}
+      <div class="empty-posts">No posts are available.</div>
     {% endfor %}
-  </div>
+  </main>
 {% endblock %}
