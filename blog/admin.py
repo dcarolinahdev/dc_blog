@@ -23,6 +23,9 @@ class PostAdmin(admin.ModelAdmin):
                  "active"]
         }),
     ]
+    list_display = ["title", "published_date", "active"]
+    list_filter = ["published_date", "created_date"]
+    search_fields = ["title", "text"]
     inlines = [CommentInline]
 
 admin.site.register(Post, PostAdmin)
