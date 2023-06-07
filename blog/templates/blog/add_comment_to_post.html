@@ -1,14 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="d-flex flex-column align-items-center div_comment_form">
-        <div>
+    <main>
+        <div class="div_comment_form p-5">
             <h2>New comment</h2>
+            <p class="span">About <span>{{ post }}</span></p>
             <form method="POST" class="post-form">{% csrf_token %}
                 <!--{% if error_message %}<div class="errors_form">{{ error_message }}</div>{% endif %}-->
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-blog">Send</button>
             </form>
         </div>
-    </div>
+    </main>
 {% endblock %}

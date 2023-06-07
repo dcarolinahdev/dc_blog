@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-  <div class="d-flex flex-column gap-5">
+  <main>
     {% for post in posts %}
       <article>
         <time>published: {{ post.published_date }}</time>
@@ -13,5 +13,5 @@
     {% empty %}
       <div class="empty-posts">No posts are available.</div>
     {% endfor %}
-  </div>
+  </main>
 {% endblock %}
