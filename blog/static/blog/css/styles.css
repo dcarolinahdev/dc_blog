@@ -140,6 +140,11 @@ article h2 a,
     font-family: 'Lobster';
 }
 
+article h2 {
+    color: var(--orange-1);
+    font-family: 'Lobster';
+}
+
 .div_post_form,
 .div_comment_form {
     background-color: white;
